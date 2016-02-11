@@ -1,11 +1,12 @@
 (defproject {{ns-name}} "0.1.0-SNAPSHOT"
   :dependencies [[org.clojure/clojure "1.7.0"]
                  [org.clojure/clojurescript "1.7.170"]
-                 [reagent "0.5.1"]
-                 [re-frame "0.6.0"]{{#re-com?}}
-                 [re-com "0.7.0"]{{/re-com?}}{{#routes?}}
+                 [reagent "0.6.0-alpha"]
+                 [re-frame "0.7.0-alpha"]{{#re-com?}}
+                 [posh "0.3.4"]{{#posh?}}
+                 [re-com "0.8.0"]{{/re-com?}}{{#routes?}}
                  [secretary "1.2.3"]{{/routes?}}{{#garden?}}
-                 [garden "1.3.0"]{{/garden?}}{{#handler?}}
+                 [garden "1.3.1"]{{/garden?}}{{#handler?}}
                  [compojure "1.4.0"]
                  [ring "1.4.0"]{{/handler?}}]
 

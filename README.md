@@ -19,6 +19,7 @@ lein new re-frame <project-name>
 
 The optional profiles include:
 
+* [posh](https://github.com/mpdairy/posh) (`+posh`)
 * [garden](https://github.com/noprompt/garden) (`+garden`)
 * [re-com](https://github.com/Day8/re-com) (`+re-com`)
 * [secretary](https://github.com/gf3/secretary) (`+routes`)

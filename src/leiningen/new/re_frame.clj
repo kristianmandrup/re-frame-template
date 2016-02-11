@@ -1,5 +1,6 @@
 (ns leiningen.new.re-frame
   (:require [leiningen.new.options.base :as base]
+            [leiningen.new.options.posh :as posh]
             [leiningen.new.options.garden :as garden]
             [leiningen.new.options.handler :as handler]
             [leiningen.new.options.re-com :as re-com]
@@ -14,6 +15,7 @@
    (base/files data)
    (views/view-cljs options data)
 
+   (when (helpers/option? posh/option options) (posh/files data))
    (when (helpers/option? garden/option options) (garden/files data))
    (when (helpers/option? handler/option options) (handler/files data))
    (when (helpers/option? re-com/option options) (re-com/assets data))
@@ -24,6 +26,7 @@
   {:name name
    :ns-name (sanitize-ns name)
    :sanitized (name-to-path name)
+   :posh? (helpers/invoke-option posh/option options)
    :garden? (helpers/invoke-option garden/option options)
    :handler? (helpers/invoke-option handler/option options)
    :re-com? (helpers/invoke-option re-com/option options)
